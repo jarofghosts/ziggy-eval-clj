@@ -1,0 +1,29 @@
+{
+  "name": "ziggy-eval-clj",
+  "version": "0.0.0",
+  "description": "eval clojure with ziggy",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jarofghosts/ziggy-eval-clj.git"
+  },
+  "keywords": [
+    "ziggy",
+    "clojure",
+    "clj",
+    "plugin",
+    "eval"
+  ],
+  "author": "jesse keane <me@jessekeane.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jarofghosts/ziggy-eval-clj/issues"
+  },
+  "homepage": "https://github.com/jarofghosts/ziggy-eval-clj",
+  "devDependencies": {
+    "tape": "^2.14.0"
+  }
+}
