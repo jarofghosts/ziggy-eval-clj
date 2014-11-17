@@ -1,6 +1,6 @@
 {
   "name": "ziggy-eval-clj",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "eval clojure with ziggy",
   "main": "index.js",
   "scripts": {
