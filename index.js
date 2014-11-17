@@ -1,7 +1,7 @@
 var qs = require('querystring').stringify
   , http = require('http')
 
-var cljRex = /\!clj\s+(.*?)/
+var cljRex = /\!clj\s+(.*?)$/
 
 evalClj.help = '!clj <expr> - eval <expr> and print result'
 
@@ -13,10 +13,11 @@ function evalClj(ziggy, settings) {
   ziggy.on('message', parseMessage)
 
   function parseMessage(user, channel, message) {
-    if(!cljRex.test(message)) return
+    var match = cljRex.exec(message)
 
-    var bits = message.split(/\s+/)
-      , expr = bits.slice(1).join(' ')
+    if(!match) return
+
+    var expr = match[1]
 
     http.get(url + qs({expr: expr}), respond)
 
@@ -34,9 +35,9 @@ function evalClj(ziggy, settings) {
           return console.error(e.message)
         }
 
-        if(!data.hasOwnProperty('result')) return
+        if(!data.hasOwnProperty('result') && !data.error) return
 
-        ziggy.say(channel, data.result)
+        ziggy.say(channel, data.result || data.message)
       })
     }
   }
