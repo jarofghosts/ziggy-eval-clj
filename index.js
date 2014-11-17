@@ -8,7 +8,7 @@ evalClj.help = '!clj <expr> - eval <expr> and print result'
 module.exports = evalClj
 
 function evalClj(ziggy, settings) {
-  var url = ((settings || {}).url || 'http://tryclj.com') + '/eval.json?'
+  var url = ((settings || {}).url || 'http://www.tryclj.com') + '/eval.json?'
 
   ziggy.on('message', parseMessage)
 
